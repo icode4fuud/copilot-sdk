@@ -17,8 +17,8 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf --glob dist *.tgz",
-    "build": "tsx esbuild-copilotsdk-nodejs.ts",
-    "test": "vitest run",
+    "build": "tsx esbuild-copilotsdk-nodejs.ts && node test/index.js",
+    "test": "vitest run && node test/index.js",
     "test:watch": "vitest",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" --ignore-path .prettierignore",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\" --ignore-path .prettierignore",
@@ -40,7 +40,7 @@
   "author": "GitHub",
   "license": "MIT",
   "dependencies": {
-    "@github/copilot": "^0.0.389",
+    "@github/copilot": "^0.0.394",
     "vscode-jsonrpc": "^8.2.1",
     "zod": "^4.3.5"
   },
@@ -50,6 +50,7 @@
     "@typescript-eslint/parser": "^8.0.0",
     "esbuild": "^0.27.0",
     "eslint": "^9.0.0",
+    "eslint-validator": "^1.0.0",
     "glob": "^11.0.0",
     "json-schema": "^0.4.0",
     "json-schema-to-typescript": "^15.0.4",
